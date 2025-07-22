@@ -1,0 +1,10 @@
+<TouchableOpacity
+            onPress={() => navigation.navigate('Detalhes')}
+            >
+para ir a outra pag
+fonte: reactnative.dev
+
+    "styled-components": "^6.1.0"
+
+atualizei para funcionar mobile
+fonte: ia
