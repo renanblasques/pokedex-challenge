@@ -4,6 +4,7 @@ import { ActivityIndicator, Text, View, TouchableOpacity, FlatList } from 'react
 import { useNavigation } from '@react-navigation/native';
 import Wrapper from './Wrapper';
 import { Title1, Title2, Title3, Body, Dd, Dt, Display, Label, ItemButton, ListCell } from './Styles';
+import { PokemonSprite, HorizontalDivisionBar } from './ViewStyles';
 
 // Remove this list after the request to the API is complete
 const mockList = [
@@ -46,12 +47,14 @@ export default function List(props) {
       {loading && <ActivityIndicator size={'large'} />}
       {list.map((i) => {
         return (
-          <View key={i.id} style={{ padding: 8 }}>
+          <View key={i.id}>
               <ListCell onPress={() => 
                 navigation.navigate('Detalhes', { id: i.id, name: i.name })}
               >
-                <Title3>{i.id}. {i.name}</Title3>
+                <PokemonSprite source={{uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${i.id}.png`}}/>
+                <Title2>{i.name}</Title2>
               </ListCell>
+              <HorizontalDivisionBar></HorizontalDivisionBar>
           </View>
         );
       })}

@@ -10,25 +10,6 @@ export const Wrapper = styled(View)`
   padding: 8px;
 `;
 
-export const ItemContainer = styled(View)`
-  padding: 8px;
-  border-bottom-width: 1px;
-  border-bottom-color: #ccc;
-`;
-
-export const ItemButton = styled(TouchableOpacity)`
-  padding: 12px;
-  background-color: #3498db;
-  border-radius: 8px;
-  align-items: center;
-  margin-top: 10px;
-`;
-
-export const ButtonText = styled(Text)`
-  color: white;
-  font-weight: bold;
-`;
-
 export const Title1 = styled(Text)`
   font-family: 'Overpass';
   font-size: 20px;
@@ -52,7 +33,7 @@ export const Title3 = styled(Text)`
   textTransform: lowercase;
 `;
 
-export const Body = styled(Text)`
+export const BodyText = styled(Text)`
   font-family: 'OpenSans';
   font-size: 14px;
   color: #343838;
@@ -64,7 +45,6 @@ export const Dt = styled(Text)`
   font-size: 14px;
   color: #343838;
   font-weight: 400;
-  margin-bottom: 24px;
   letter-spacing: 0.7px;
 `;
 
@@ -73,7 +53,6 @@ export const Dd = styled(Text)`
   font-size: 14px;
   color: #343838;
   font-weight: 600;
-  margin-bottom: 24px;
   letter-spacing: 0.7px;
 `;
 
@@ -90,17 +69,35 @@ export const Label = styled(Text)`
   font-weight: 400;
   textTransform: uppercase;
   letter-spacing: 0.6px;
-  color: #FFFFFF;
+  color: #000000;
 `;
 
 export const ListCell = styled(TouchableOpacity)`
   display: flex;
-  justify-content: center;
-  padding: 2px;
+  flex-direction: row;
+  align-items: center;
   background-color: #FFFFFF;
   border-radius: 8px;
-  margin-top: 2px;
+  margin: 4px 32px;
   height: 40px;
+  z-index: 1;
+  overflow: hidden;
+
+  shadow-color: #000;
+  shadow-offset: 0px 2px;
+  shadow-opacity: 0.05;
+  shadow-radius: 2px;
+
+  elevation: 3;
 `;
 
+export const ShareButton = styled(TouchableOpacity)`
+  margin: 64px 0;
+  background-color: #478070;
+  border-radius: 8px;
+  height: 40px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
 
