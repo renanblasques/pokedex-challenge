@@ -8,3 +8,21 @@ fonte: reactnative.dev
 
 atualizei para funcionar mobile
 fonte: ia
+
+flatlist
+https://www.youtube.com/watch?v=I3zD1ZVImrg
+
+funcionalidades a mais:
+cor dos tipos (badge, background, share e barras)
+se passa de 100 fica vermelho
+
+
+https://stackoverflow.com/questions/48026543/react-native-headertitlestyle
+
+https://styled-components.com/docs/basics#coming-from-css
+
+https://reactnative.dev/docs/flexbox
+
+https://reactnative.dev/docs/share?language=javascript
+
+https://reactnative.dev/docs/next/activityindicator

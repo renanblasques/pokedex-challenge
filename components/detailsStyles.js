@@ -1,10 +1,15 @@
 import styled from 'styled-components';
-import Constants from 'expo-constants';
-import { View, TouchableOpacity, Image } from 'react-native';
+import { typeColors, typeColorsBackground } from './typeColors';
+import { View, Image, SafeAreaView, ActivityIndicator } from 'react-native';
+import { ProgressBar } from 'react-native-paper';
 
 export const Main = styled(View)`
   flex: 1;
-  background-color: #8BD9A0;
+`;
+
+export const ScreenArea = styled(SafeAreaView)`
+  background-color: ${({ type }) => typeColorsBackground[type.toLowerCase()] || typeColorsBackground.default};
+  height: 110%;
 `;
 
 export const BadgeSection = styled(View)`
@@ -16,7 +21,7 @@ export const BadgeSection = styled(View)`
 export const Badge = styled(View)`
   margin-right: 15px;
   padding: 10px;
-  background-color: #478070;
+  background-color: ${({ type }) => typeColors[type.toLowerCase()] || typeColors.default};
   border-radius: 8px;
 `;
 
@@ -26,29 +31,21 @@ export const CardSection = styled(View)`
   flex-direction: column;
   text-align: center;
   align-items: center;
-  position: relative;
+  z-index: 1;
 `;
 
 export const PokemonImg = styled(Image)`
   height: 190px;
   width: 190px;
-  position: absolute;
   z-index: 10;
-`;
-
-export const PokemonSprite = styled(Image)`
-  height: 48px;
-  width: 48px;
-  margin: 8px 16px 0 2px;
 `;
 
 export const CardInfo = styled(View)`
   background-color: #FFFFFF;
-  position: absolute;
-  top: 140px;
+  margin-top: -30px;
   border-radius: 24px; 
   width: 100%;
-  height: 100%;
+  height: 200%;
   padding: 15px;
 `;
 
@@ -62,7 +59,8 @@ export const SizeSection = styled(View)`
 export const SizeInfo = styled(View)`
   padding: 10px;
   align-items: center;
-  padding: 0 32px;
+  padding: 0 16px;
+  width: 55%;
 `;
 
 export const BaseStatsSection = styled(View)`
@@ -91,6 +89,10 @@ export const BaseBar = styled(View)`
   width: 70%;
 `;
 
+export const BaseBarLenght = styled(ProgressBar)`
+  background-color: #E5E5E5;
+`;
+
 export const BaseValue = styled(View)`
   align-items: right;
   justify-content: center;
@@ -108,3 +110,10 @@ export const HorizontalDivisionBar = styled(View)`
   height: 1px;
   margin: 0 32px;
 `;
+
+export const LoadingIndicator = styled(ActivityIndicator)`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
