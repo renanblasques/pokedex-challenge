@@ -7,6 +7,11 @@ export const Title = styled(Text)`
   font-weight: 600;
 `;
 
+export const Header = styled(Title)`
+  font-size: 20px;
+  text-align: center;
+`;
+
 export const T1 = styled(Title)`
   font-size: 20px;
   textTransform: lowercase;

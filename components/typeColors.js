@@ -43,26 +43,3 @@ export const typeColorsBackground = {
   stellar: '#A9D6F2',
   default: '#CFE8DD'
 };
-
-export const typeGradients = {
-  normal: ['#A8A77A', '#E0E0C4'],
-  fire: ['#EE8130', '#FFD4B3'],
-  water: ['#6390F0', '#B3CCFF'],
-  electric: ['#F7D02C', '#FFF3B3'],
-  grass: ['#7AC74C', '#CFF5CC'],
-  ice: ['#96D9D6', '#D0F1F0'],
-  fighting: ['#C22E28', '#F4B3B0'],
-  poison: ['#A33EA1', '#E0B3E6'],
-  ground: ['#E2BF65', '#F7E9C4'],
-  flying: ['#A98FF3', '#D7CEFA'],
-  psychic: ['#F95587', '#FFCCE0'],
-  bug: ['#A6B91A', '#D9E6A3'],
-  rock: ['#B6A136', '#E4D8A8'],
-  ghost: ['#735797', '#C9B8DE'],
-  dragon: ['#6F35FC', '#C5B7FA'],
-  dark: ['#705746', '#C6BEB8'],
-  steel: ['#B7B7CE', '#E0E0EA'],
-  fairy: ['#D685AD', '#F5C7DA'],
-  stellar: ['#4B9FCF', '#A9D6F2'],
-  default: ['#478070', '#CFE8DD'],
-};

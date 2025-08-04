@@ -10,7 +10,7 @@ export const ListCellContainer = styled(TouchableOpacity)`
 
   shadow-color: #000;
   shadow-offset: 0px 2px;
-  shadow-opacity: 0.05;
+  shadow-opacity: 0.3;
   shadow-radius: 2px;
 
   elevation: 3;

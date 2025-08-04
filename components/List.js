@@ -3,8 +3,8 @@ import { ActivityIndicator, View, FlatList, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import * as Txt from './textStyles'; 
-import { SearchBar } from './searchStyles';
-import { ListCellContainer, ListCell, PokemonSprite, HorizontalDivisionBar } from './listStyles';
+import { SearchBar, SearchIcon, SearchInput } from './searchStyles';
+import { ListCellContainer, ListCell, PokemonSprite, HorizontalDivisionBar, Header } from './listStyles';
 
 export default function List() {
   const [loading, setLoading] = React.useState(true);
@@ -15,20 +15,7 @@ export default function List() {
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
-      title: 'Lista de Pokémon',
-      headerStyle: {
-        backgroundColor: '#FFFFFF',
-        elevation: 0, // Android
-        shadowOpacity: 0, // iOS
-      },
-      headerTintColor: '#000',
-      headerBackTitleVisible: false,
-      headerTitleAlign: 'center',
-      headerTitleStyle: {
-        fontFamily: 'Overpass',
-        fontSize: 20,
-        fontWeight: '600',
-      },
+    headerTitle: () => <Txt.Header>Lista de Pokémon</Txt.Header>,
     });
   }, [navigation]);
 
@@ -64,12 +51,17 @@ export default function List() {
   return (
     <SafeAreaView>
       {loading && <ActivityIndicator size={'large'} />}
-        <SearchBar
-          placeholder="Busque pelo nome do Pokémon"
-          placeholderTextColor="#999"
+
+      <SearchBar>
+        <SearchIcon source={require('../assets/imgs/search.png')} />
+        <SearchInput
+          placeholder="Busque pelo nome do Pokémon..."
+          placeholderTextColor="#999999"
           value={search}
           onChangeText={setSearch}
+          autoCorrect={false}
         />
+      </SearchBar>
         
       <FlatList
         data={filteredList}

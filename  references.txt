@@ -1,28 +1,69 @@
-<TouchableOpacity
-            onPress={() => navigation.navigate('Detalhes')}
-            >
-para ir a outra pag
-fonte: reactnative.dev
+Importação de fontes (usando o useFonts)
+https://docs.expo.dev/develop/user-interface/fonts/
+https://fonts.google.com/specimen/Overpass?query=overpass
+https://fonts.google.com/specimen/Open+Sans
 
-    "styled-components": "^6.1.0"
+"styled-components": "^6.1.0" (package.json)
+Tive que atualizar para funcionar no iOS/Android (perguntei para IA)
 
-atualizei para funcionar mobile
-fonte: ia
+Arrow Functions (JS)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
-flatlist
+TouchableOpacity
+https://reactnative.dev/docs/touchableopacity
+
+Navegar da lista para os detalhes
+https://reactnavigation.org/docs/use-navigation/
+https://reactnavigation.org/docs/use-route/
+https://reactnavigation.org/docs/navigating
+
+Texto e Imagens
+https://reactnative.dev/docs/text
+https://reactnative.dev/docs/image
+
+FlatList
+https://reactnative.dev/docs/next/flatlist
 https://www.youtube.com/watch?v=I3zD1ZVImrg
 
-funcionalidades a mais:
-cor dos tipos (badge, background, share e barras)
-se passa de 100 fica vermelho
+Requisição da API e Bloco Try/Catch/Finally (já tinha conhecimento de um projeto que fiz chamando a API do Google Gemini)
+https://github.com/renanblasques/nlw-agents
+https://github.com/renanblasques/nlw-agents/blob/main/script.js
 
-
-https://stackoverflow.com/questions/48026543/react-native-headertitlestyle
-
-https://styled-components.com/docs/basics#coming-from-css
-
+Estilização + Flexbox + Styled Components (conhecimento de CSS ajudou bastante)
+https://reactnative.dev/docs/style
+https://reactnative.dev/docs/height-and-width
+https://reactnative.dev/docs/colors
 https://reactnative.dev/docs/flexbox
+https://styled-components.com/docs/basics#coming-from-css
+https://styled-components.com/docs/basics#react-native
+https://reactnative.dev/docs/shadow-props
 
+Botão de compartilhamento
 https://reactnative.dev/docs/share?language=javascript
 
+Header da lista e dos detalhes
+https://stackoverflow.com/questions/48026543/react-native-headertitlestyle + IA
+
+Ícone de loading
 https://reactnative.dev/docs/next/activityindicator
+
+Barras para mostrar o valor de cada base (ProgressBar)
+https://callstack.github.io/react-native-paper/docs/components/ProgressBar/
+
+SafeAreaView e ScrollView
+https://reactnative.dev/docs/scrollview
+https://reactnative.dev/docs/safeareaview
+
+Funcionalidades extras
+- IDs dos Pokémon antes do nome
+- Barra de pesquisa por nome (https://reactnative.dev/docs/textinput)
+- Ícone de loading antes de obter os detalhes do Pokémon e antes de carregar a imagem
+  (Motivação: API da imagem demora mais, assim é possível já ver os detalhes antes da imagem aparecer)
+- Tela de detalhes com cores baseadas no tipo principal do Pokémon (Badge, background, share e barras)
+  (https://pokemon.fandom.com/wiki/Type)
+- Se o atributo base passa de 100, a barra e o número ficam vermelhos
+
+Funcionalidades extras planejadas
+- Tela de início ao abrir o aplicativo
+- Ícone do aplicativo
+- Tela de favoritos

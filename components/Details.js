@@ -8,7 +8,7 @@ import * as Detail from './detailsStyles';
 import { ShareButton, LoadingIndicator } from './miscStyles';
 import { typeColors } from './typeColors';
 
-export default function Details(props) {
+export default function Details() {
   const route = useRoute();
   const navigation = useNavigation();
 
@@ -21,14 +21,9 @@ export default function Details(props) {
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
-      title: `${name}`,
+      headerTitle: () => <Txt.Header>{name}</Txt.Header>,
       headerBackTitleVisible: false,
       headerTitleAlign: 'left',
-      headerTitleStyle: {
-        fontFamily: 'Overpass',
-        fontSize: 20,
-        fontWeight: '600',
-    },
     });
   }, [navigation, name]);
 
@@ -76,12 +71,12 @@ export default function Details(props) {
         pokemonDetails.mainType.slice(1);
       await Share.share({
         message:
-          `Hey! Check out this awesome Pokémon I just caught!
+          `Ei, olha só esse Pokémon que acabei de capturar!
 
-Name: ${pokemonNameUpper} (ID: ${id})
-Main type: ${pokemonTypeUpper}
-Height: ${pokemonDetails.height} m | Weight: ${pokemonDetails.weight} kg
-Picture: ${pokemonSprite}`,
+Nome: ${pokemonNameUpper} (ID: ${id})
+Tipo principal: ${pokemonTypeUpper}
+Altura: ${pokemonDetails.height} m | Peso: ${pokemonDetails.weight} kg
+Foto: ${pokemonSprite}`,
       });
     } catch (error) {
       Alert.alert(error.message);
@@ -132,59 +127,33 @@ Picture: ${pokemonSprite}`,
                   <Detail.BaseStatsSection>
                     <Txt.T2>Base stats</Txt.T2>
                     
-                    <Detail.BaseStats>
-                      <Detail.BaseType>
-                        <Txt.Dt>HP</Txt.Dt>
-                      </Detail.BaseType>
-                      <Detail.BaseBar>
-                        <Detail.BaseBarLenght 
-                          progress={pokemonDetails.stats.hp / 100} 
-                          color={(pokemonDetails.stats.hp > 100) ? 'red' : typeColors[pokemonDetails.mainType]} 
-                        />
-                      </Detail.BaseBar>
-                      <Detail.BaseValue>
-                        <Txt.Dd 
-                          style={{ color: pokemonDetails.stats.hp > 100 ? 'red' : 'black' }}
-                        >{pokemonDetails.stats.hp}
-                        </Txt.Dd>
-                      </Detail.BaseValue>
-                    </Detail.BaseStats>
-
-                    <Detail.BaseStats>
-                      <Detail.BaseType>
-                        <Txt.Dt>Attack</Txt.Dt>
-                      </Detail.BaseType>
-                      <Detail.BaseBar>
-                        <Detail.BaseBarLenght 
-                          progress={pokemonDetails.stats.attack / 100} 
-                          color={(pokemonDetails.stats.attack > 100) ? 'red' : typeColors[pokemonDetails.mainType]} 
-                        />
-                      </Detail.BaseBar>
-                      <Detail.BaseValue>
-                        <Txt.Dd 
-                          style={{ color: pokemonDetails.stats.attack > 100 ? 'red' : 'black' }}
-                        >{pokemonDetails.stats.attack}
-                        </Txt.Dd>
-                      </Detail.BaseValue>
-                    </Detail.BaseStats>
-
-                    <Detail.BaseStats>
-                      <Detail.BaseType>
-                        <Txt.Dt>Defense</Txt.Dt>
-                      </Detail.BaseType>
-                      <Detail.BaseBar>
-                        <Detail.BaseBarLenght 
-                          progress={pokemonDetails.stats.defense / 100} 
-                          color={(pokemonDetails.stats.defense > 100) ? 'red' : typeColors[pokemonDetails.mainType]} 
-                        />
-                      </Detail.BaseBar>
-                      <Detail.BaseValue>
-                        <Txt.Dd 
-                          style={{ color: pokemonDetails.stats.defense > 100 ? 'red' : 'black' }}
-                        >{pokemonDetails.stats.defense}
-                        </Txt.Dd>
-                      </Detail.BaseValue>
-                    </Detail.BaseStats>
+                    {
+                      [
+                        { base_name: 'HP', value: pokemonDetails.stats.hp },
+                        { base_name: 'Attack', value: pokemonDetails.stats.attack },
+                        { base_name: 'Defense', value: pokemonDetails.stats.defense },
+                      ].map(({ base_name, value }, i) => (
+                      <Detail.BaseStats key={i}>
+                        <Detail.BaseType>
+                          <Txt.Dt>{base_name}</Txt.Dt>
+                        </Detail.BaseType>
+                        <Detail.BaseBar>
+                          <Detail.BaseBarLenght 
+                            progress={value / 100}
+                            color={value > 100 ? '#FF0000' : typeColors[pokemonDetails.mainType]}
+                          />
+                        </Detail.BaseBar>
+                        <Detail.BaseValue>
+                          <Txt.Dd
+                            style={{
+                              color: value > 100 ? '#FF0000' : '#000000',
+                            }}
+                          >
+                            {value}
+                          </Txt.Dd>
+                        </Detail.BaseValue>
+                      </Detail.BaseStats>
+                    ))}
                     
                   </Detail.BaseStatsSection>
 

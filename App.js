@@ -1,14 +1,13 @@
-import * as React from 'react';
 import { useFonts } from 'expo-font';
 import List from './components/List';
 import Details from './components/Details';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
+  useFonts({
     Overpass: require('/assets/fonts/Overpass-Regular.ttf'),
     OverpassItalic: require('/assets/fonts/Overpass-Italic.ttf'),
     OpenSans: require('/assets/fonts/OpenSans-Regular.ttf'),

@@ -8,7 +8,7 @@ export const Main = styled(View)`
 `;
 
 export const ScreenArea = styled(SafeAreaView)`
-  background-color: ${({ type }) => typeColorsBackground[type.toLowerCase()] || typeColorsBackground.default};
+  background-color: ${({ type }) => typeColorsBackground[type] || typeColorsBackground.default};
   height: 110%;
 `;
 
@@ -21,8 +21,15 @@ export const BadgeSection = styled(View)`
 export const Badge = styled(View)`
   margin-right: 15px;
   padding: 10px;
-  background-color: ${({ type }) => typeColors[type.toLowerCase()] || typeColors.default};
+  background-color: ${({ type }) => typeColors[type] || typeColors.default};
   border-radius: 8px;
+
+  shadow-color: ${({ type }) => typeColors[type] || typeColors.default};
+  shadow-offset: 0px 2px;
+  shadow-opacity: 0.5;
+  shadow-radius: 2px;
+
+  elevation: 3;
 `;
 
 export const CardSection = styled(View)`
