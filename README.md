@@ -13,13 +13,13 @@ Você pode visualizar a aplicação diretamente no navegador através do **Expo 
 
 Ou baixar o aplicativo **Expo Go** no seu celular e escanear o QR code do Snack para testar diretamente no dispositivo (pessoalmente eu acho essa opção mais legal).
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **React Native**: Framework utilizado para desenvolver o aplicativo multiplataforma (iOS e Android)
 - **JavaScript (ES6+)**: Lógica de programação para listar e detalhar os Pokémon chamando a API oficial
 - **Expo**: Ambiente de desenvolvimento e testes
 
-## 🔍 Funcionalidades
+## Funcionalidades
 
 - Lista completa e oficial dos Pokémon;
 - Busca por nome;
